@@ -41,7 +41,7 @@ public class A1Novice {
 			
 			double finalcost = calculateTotalCost(itemcount, itemprice);
 			
-			System.out.println(FirstNames[i].charAt(0) + ". " + LastNames[i] + ": " + finalcost);
+			System.out.println(FirstNames[i].charAt(0) + ". " + LastNames[i] + ": " + String.format("%.2f",  finalcost));
 			
 		}
 	}
