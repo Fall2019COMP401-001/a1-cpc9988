@@ -33,7 +33,7 @@ public class A1Novice {
 			String[] itemname = new String[NumofItems[i]];
 			double[] itemprice = new double[NumofItems[i]];
 			
-			for (int j=0; j < NumofItems[j]; j++) {
+			for (int j=0; j < NumofItems[i]; j++) {
 				itemcount[j] = scan.nextInt();
 				itemname[j] = scan.next();
 				itemprice[j] = scan.nextDouble();
