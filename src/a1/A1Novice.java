@@ -44,6 +44,10 @@ public class A1Novice {
 			System.out.println(FirstNames[i].charAt(0) + ". " + LastNames[i] + ": " + String.format("%.2f",  finalcost));
 			
 		}
+		
+		// All input parsed, so close scanner
+		scan.close();
+				
 	}
 
 	/* calculateTotalCost
