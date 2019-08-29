@@ -73,11 +73,12 @@ public class A1Adept {
 		
 		String[] newcosts = new String[totalcosts.length];
 		for (int i = 0; i < newcosts.length; i++) {
-		    newcosts[i] = String.format("%.2f", totalcosts[i]);
+			newcosts[i] = String.valueOf(totalcosts[i]);
 		}
 		
-		int maxidx = Arrays.asList(newcosts).indexOf(String.format("%.2f", maxcost));
-		int minidx = Arrays.asList(newcosts).indexOf((String.format("%.2f", mincost)));
+		int maxidx = Arrays.asList(newcosts).indexOf(String.valueOf(maxcost));
+		int minidx = Arrays.asList(newcosts).indexOf((String.valueOf(mincost)));
+		
 		
 		System.out.println("Biggest: " + FirstNames[maxidx] + " " + LastNames[maxidx] + " (" + String.format("%.2f", maxcost) + ")");
 		System.out.println("Smallest: " + FirstNames[minidx] + " " + LastNames[minidx] + " (" + String.format("%.2f", mincost) + ")");
