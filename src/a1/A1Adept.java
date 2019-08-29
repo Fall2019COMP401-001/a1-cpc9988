@@ -1,6 +1,7 @@
 package a1;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class A1Adept {
@@ -57,25 +58,30 @@ public class A1Adept {
 			}
 			
 			double finalcost = A1Novice.calculateTotalCost(itemquantity, itemprice);
-			for (int k=0; k < customercount; k++) {
-				totalcosts[k] = finalcost;
-			}
+			totalcosts[i] = finalcost;
 			
 		}
+		
+		
 		// All input parsed, so close scanner
 		scan.close();
 		
 		double maxcost = findValueMax(totalcosts);
 		double mincost = findValueMin(totalcosts);
 		double sum = calculateValueSum(totalcosts);
-		double averagecost = ((double) sum) / ((double) customercount);
-		int maxidx = Arrays.asList(totalcosts).indexOf(maxcost);
-		int minidx = Arrays.asList(totalcosts).indexOf(maxcost);
+		double averagecost = (double) sum / customercount;
+		
+		String[] newcosts = new String[totalcosts.length];
+		for (int i = 0; i < newcosts.length; i++) {
+		    newcosts[i] = String.format("%.2f", totalcosts[i]);
+		}
+		
+		int maxidx = Arrays.asList(newcosts).indexOf(String.format("%.2f", maxcost));
+		int minidx = Arrays.asList(newcosts).indexOf((String.format("%.2f", mincost)));
 		
 		System.out.println("Biggest: " + FirstNames[maxidx] + " " + LastNames[maxidx] + " (" + String.format("%.2f", maxcost) + ")");
 		System.out.println("Smallest: " + FirstNames[minidx] + " " + LastNames[minidx] + " (" + String.format("%.2f", mincost) + ")");
 		System.out.println("Average: " + String.format("%.2f", averagecost));
-		
 	}
 	
 	static double findValueMin(double[] vals) {
