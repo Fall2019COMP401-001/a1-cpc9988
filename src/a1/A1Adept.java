@@ -59,7 +59,7 @@ public class A1Adept {
 			double[] totalcosts = new double[customercount];
 			double finalcost = A1Novice.calculateTotalCost(itemquantity, itemprice);
 			for (int k=0; k < customercount; k++) {
-				totalcosts[k] = finalcost
+				totalcosts[k] = finalcost;
 			}
 			
 		}
